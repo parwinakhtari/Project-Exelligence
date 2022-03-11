@@ -47,6 +47,15 @@ const UserSchema = new Schema({
       review: String,
     },
   ],
+  enrolledPatient: [
+    {
+      patientName: String,
+      patientEmail: String,
+      patientId:String,
+      patientImage: String,
+      patientDate: Date,
+    },
+  ],
 });
 const User = new mongoose.model("user", UserSchema);
 User.createIndexes();

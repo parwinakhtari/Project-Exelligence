@@ -5,20 +5,21 @@ import Navbar from "./components/Navbar";
 import Home from "./components/patient/Home";
 import About from "./components/doctor/About";
 import AboutPatient from "./components/patient/AboutPatient";
-import Discussion from "./components/patient/Discussion";
-import NoteState from "./context/notes/NoteState";
 import Alert from "./components/Alert";
-import PatientNotes from "./components/patient/PatientNotes";
 import { Login } from "./components/Login";
 import { Signup } from "./components/doctor/Signup";
 import { useState } from "react";
 import SignupHome from "./components/SignupHome";
 import { SignupPatient } from "./components/patient/SignupPatient";
-import DirectMessaging from "./components/DirectMessaging";
 import ViewProfile from "./components/patient/ViewProfile";
-import NotificationMentor from "./components/doctor/NotificationMentor";
-import Books from "./components/patient/Books";
+import NotificationDoctor from "./components/doctor/NotificationDoctor";
 import { Notfound } from "./components/Notfound";
+import Homedoctor from "./components/doctor/Homedoctor";
+import ViewProfilePatient from "./components/doctor/ViewProfilePatient";
+import { HomePage } from "./components/HomePage";
+import { Excercise } from "./components/patient/Excercise";
+import { Report } from "./components/patient/Report";
+import { ReportDoctor } from "./components/doctor/ReportDoctor";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -33,30 +34,42 @@ function App() {
   };
   return (
     <>
-      <NoteState>
-        <Router>
-          <Navbar showAlert={showAlert} />
-          <Alert alert={alert} />
-          <div className="container">
-            <Routes>
+      <Router>
+        <Navbar showAlert={showAlert} />
+        <Alert alert={alert} />
+        <div>
+          <Routes>
             <Route exact path="/" element={<Home showAlert={showAlert} />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/aboutpatient" element={<AboutPatient />} />
-            <Route exact path="/chat" element={<DirectMessaging />} />
-            <Route exact path="/discussion" element={<Discussion />} />
-            <Route exact path="/patient_notes" element={<PatientNotes showAlert={showAlert} />} />
+            <Route exact path="/homedoctor" element={<Homedoctor showAlert={showAlert} />} />
+            <Route exact path="/about" element={<About showAlert={showAlert} />} />
+            <Route exact path="/aboutpatient" element={<AboutPatient showAlert={showAlert} />} />
+            <Route exact path="/excercise" element={<Excercise showAlert={showAlert} />} />
             <Route exact path="/login" element={<Login showAlert={showAlert} />} />
             <Route exact path="/signuphome" element={<SignupHome showAlert={showAlert} />} />
             <Route exact path="/signup" element={<Signup showAlert={showAlert} />} />
             <Route exact path="/signuppatient" element={<SignupPatient showAlert={showAlert} />} />
             <Route exact path="/viewProfile/:id" element={<ViewProfile showAlert={showAlert} />} />
-            <Route exact path="/notify" element={<NotificationMentor showAlert={showAlert} />} />
-            <Route exact path="/books" element={<Books showAlert={showAlert} />} />
+            <Route exact path="/viewProfilePatient/:id" element={<ViewProfilePatient showAlert={showAlert} />} />
+            <Route exact path="/notify" element={<NotificationDoctor showAlert={showAlert} />} />
+            <Route exact path="/homepage" element={<HomePage />} />
+            <Route exact path="/report" element={<Report showAlert={showAlert} />} />
+            <Route exact path="/reportDoctor" element={<ReportDoctor showAlert={showAlert} />} />
             <Route path="*" element={<Notfound />} />
-            </Routes>
+          </Routes>
+        </div>
+        <footer className="footer py-2 text-muted">
+          <div className="container-fluid">
+            <div className="row align-items-center justify-content-center">
+              <div className="col-12 mb-lg-0 mb-4">
+                <div className="text-center text-sm">
+                  Made with ❤️ by
+                  <b> Team Nutella</b>
+                </div>
+              </div>
+            </div>
           </div>
-        </Router>
-      </NoteState>
+        </footer>
+      </Router>
     </>
   );
 }

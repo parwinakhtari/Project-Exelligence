@@ -116,7 +116,7 @@ router.get("/getUser", fetchUser, async (req, res) => {
 // ROUTE34: Get  details of all mentors
 router.get("/getAllusers", fetchUser, async (req, res) => {
   try {
-    const data = await User.find({ role: "mentor" });
+    const data = await User.find({ role: "doctor" });
     res.send(data);
   } catch (error) {
     console.log(error.message);
@@ -130,6 +130,37 @@ router.get("/getDetails/:id", fetchUser, async (req, res) => {
     const id = req.params.id;
     const user = await User.findById(id);
     res.send(user);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Oops internal server error occured");
+  }
+});
+
+// ROUTE6: Get particular patient details for voew profile from doctor: login required
+router.get("/getDetailsofPatient/:id", fetchUser, async (req, res) => {
+  try {
+    const id = req.params.id;
+    const user = await User.findById(id);
+    res.send(user);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Oops internal server error occured");
+  }
+});
+// ROUTE 7 : update existing diesease of a patient: Login required
+router.put("/updateDisease", fetchUser, async (req, res) => {
+  try {
+    const { disease } = req.body;
+    //create new profile object
+    let newProfile = {};
+    newProfile.disease=disease;
+    //find the user to be updated and then update it
+    let user = await User.findByIdAndUpdate(
+      req.user.id,
+      { $set: newProfile },
+      { new: true }
+    );
+    res.json({ user });
   } catch (error) {
     console.log(error.message);
     res.status(500).send("Oops internal server error occured");

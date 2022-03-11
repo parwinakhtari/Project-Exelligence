@@ -16,7 +16,7 @@ export const Signup = (props) => {
     img: "",
     specialization: "",
     location: "",
-    disease:""
+    disease: "",
   });
 
   const onChange = (e) => {
@@ -29,12 +29,12 @@ export const Signup = (props) => {
   async function uploadImage() {
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "jqywmvza");
-    data.append("cloud_name", "rapidhack");
-    data.append("API_KEY", "247546958156261");
+    data.append("upload_preset", "ml_default");
+    data.append("cloud_name", "dji1x581h");
+    data.append("API_KEY", "259572968185587");
 
     const resp = await fetch(
-      "  https://api.cloudinary.com/v1_1/rapidhack/image/upload",
+      "  https://api.cloudinary.com/v1_1/dji1x581h/image/upload",
       {
         method: "post",
         body: data,
@@ -57,7 +57,7 @@ export const Signup = (props) => {
       img,
       specialization,
       location,
-      disease
+      disease,
     } = credentials;
 
     const response = await fetch(`http://localhost:5000/api/auth/signup`, {
@@ -76,7 +76,7 @@ export const Signup = (props) => {
         img,
         specialization,
         location,
-        disease
+        disease,
       }),
     });
     const json = await response.json();
@@ -85,7 +85,7 @@ export const Signup = (props) => {
       localStorage.setItem("token", json.authToken);
       localStorage.setItem("email", json.user.email);
       localStorage.setItem("role", json.user.role);
-      navigate("/");
+      navigate("/homedoctor");
       props.showAlert("Account Created Succesfully", "success");
     } else {
       props.showAlert("Invalid Details", "danger");
@@ -202,7 +202,7 @@ export const Signup = (props) => {
                         </div>
                         <div className="mb-1">
                           <label
-                            htmlFor="experience"
+                            htmlFor="specialization"
                             className="form-label"
                             style={{ fontSize: "14px" }}
                           >
@@ -215,11 +215,11 @@ export const Signup = (props) => {
                             aria-label="Default select example"
                             required
                           >
-                            <option selected>Select specialization</option>
+                            <option defaultValue value="">
+                              Select specialization
+                            </option>
                             <option value="Orthopedics">Orthopedics</option>
-                            <option value="Dermatology">Dermatology</option>
                             <option value="Pediatrics">Pediatrics</option>
-                            <option value="Radiology">Radiology</option>
                             <option value="Ophthalmology">Ophthalmology</option>
                             <option value="Neurology">Neurology</option>
                           </select>
@@ -257,6 +257,21 @@ export const Signup = (props) => {
                             id="location"
                             value={credentials.location}
                             onChange={onChange}
+                          />
+                        </div>
+                        <div className="mb-1">
+                          <label
+                            htmlFor="Consultaion Fees"
+                            className="form-label"
+                            style={{ fontSize: "14px" }}
+                          >
+                            Consultaion Fees
+                          </label>
+                          <input
+                            type="number"
+                            className="form-control"
+                            name="money"
+                            id="money"
                           />
                         </div>
                         <div className="mb-1">
@@ -309,18 +324,18 @@ export const Signup = (props) => {
                             Login
                           </Link>
                         </div>
+                        
                       </form>
                     </div>
                   </div>
                   <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 className="mb-4">We are more than just a hospital</h4>
+                    <h4 className="mb-4">Exelligence Paltform</h4>
                       <p className="small mb-0">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
+                        Get digital prescriptions, monitoring your progress with
+                        advanced AI features, being a part of patients -
+                        community. Get personalized one-to-one attentions by
+                        health professionals till completely recovery .
                       </p>
                     </div>
                   </div>

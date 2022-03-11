@@ -16,7 +16,7 @@ export const SignupPatient = (props) => {
     img: "",
     specialization: "",
     location: "",
-    disease:""
+    disease: "",
   });
 
   const onChange = (e) => {
@@ -30,12 +30,12 @@ export const SignupPatient = (props) => {
   async function uploadImage() {
     const data = new FormData();
     data.append("file", image);
-    data.append("upload_preset", "jqywmvza");
-    data.append("cloud_name", "rapidhack");
-    data.append("API_KEY", "247546958156261");
+    data.append("upload_preset", "ml_default");
+    data.append("cloud_name", "dji1x581h");
+    data.append("API_KEY", "259572968185587");
 
     const resp = await fetch(
-      "  https://api.cloudinary.com/v1_1/rapidhack/image/upload",
+      "  https://api.cloudinary.com/v1_1/dji1x581h/image/upload",
       {
         method: "post",
         body: data,
@@ -57,7 +57,7 @@ export const SignupPatient = (props) => {
       img,
       specialization,
       location,
-      disease
+      disease,
     } = credentials;
 
     const response = await fetch(`http://localhost:5000/api/auth/signup`, {
@@ -76,7 +76,7 @@ export const SignupPatient = (props) => {
         img,
         specialization,
         location,
-        disease
+        disease,
       }),
     });
     const json = await response.json();
@@ -92,7 +92,7 @@ export const SignupPatient = (props) => {
     }
   };
   return (
-    <div>
+    <div className="container">
       <section className="h-100 gradient-form">
         <div className="h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -204,7 +204,7 @@ export const SignupPatient = (props) => {
                             className="form-label"
                             style={{ fontSize: "14px" }}
                           >
-                             Disease
+                            Disease
                           </label>
                           <input
                             type="disease"
@@ -215,7 +215,6 @@ export const SignupPatient = (props) => {
                             onChange={onChange}
                           />
                         </div>
-
 
                         <div className="mb-1">
                           <label
@@ -274,13 +273,12 @@ export const SignupPatient = (props) => {
                   </div>
                   <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
                     <div className="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 className="mb-4">We are more than just a company</h4>
+                      <h4 className="mb-4">Exelligence Paltform</h4>
                       <p className="small mb-0">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.
+                        Get digital prescriptions, monitoring your progress with
+                        advanced AI features, being a part of patients -
+                        community. Get personalized one-to-one attentions by
+                        health professionals till completely recovery .
                       </p>
                     </div>
                   </div>

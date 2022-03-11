@@ -8,6 +8,8 @@ export default function Navbar(props) {
   let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    localStorage.removeItem("email");
     navigate("/login");
     props.showAlert("Logged Out!!", "primary");
   };
@@ -18,8 +20,17 @@ export default function Navbar(props) {
       ) : (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to={userrole === "patient" ?"/":"/about"}>
-            Exelligence
+            <img
+              src="https://res.cloudinary.com/rapidhack/image/upload/v1643878114/Medibles-logo_wpyytn.png"
+              style={{ width: "32px" }}
+              alt="logo"
+              className="mx-2"
+            />
+            <Link
+              className="navbar-brand"
+              to={userrole === "patient" ? "/" : "/homedoctor"}
+            >
+              Exelligence
             </Link>
             <button
               className="navbar-toggler"
@@ -52,11 +63,21 @@ export default function Navbar(props) {
                   <li className="nav-item">
                     <Link
                       className={`nav-link ${
-                        location.pathname === "/student_notes" ? "active" : ""
+                        location.pathname === "/excercise" ? "active" : ""
                       }`}
-                      to="/student_notes"
+                      to="/excercise"
                     >
                       Excercise
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/report" ? "active" : ""
+                      }`}
+                      to="/report"
+                    >
+                      Report
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -82,12 +103,13 @@ export default function Navbar(props) {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 p-2">
                   <li className="nav-item">
                     <Link
-                      className={`nav-link ${location.pathname === "/session" ? "active" : ""
-                        }`}
+                      className={`nav-link ${
+                        location.pathname === "/homedoctor" ? "active" : ""
+                      }`}
                       aria-current="page"
-                      to="/session"
+                      to="/homedoctor"
                     >
-                      Create Session
+                      Home
                     </Link>
                   </li>
                   <li className="nav-item">
@@ -98,6 +120,16 @@ export default function Navbar(props) {
                       to="/about"
                     >
                       About
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/reportDoctor" ? "active" : ""
+                      }`}
+                      to="/reportDoctor"
+                    >
+                      Report
                     </Link>
                   </li>
                   <li className="nav-item">

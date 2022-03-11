@@ -3,5 +3,8 @@
         "server": "npm start --prefix server",
         "client": "npm start --prefix client",
         "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "dependencies": {
+        "google-search-results-nodejs": "^2.1.0"
     }
 }
