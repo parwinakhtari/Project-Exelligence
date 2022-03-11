@@ -34,7 +34,7 @@ export default function ViewProfilePatient(props) {
   // Separate function to get user details
   async function getUser() {
     const response = await fetch(
-      `http://localhost:5000/api/auth/getDetailsofPatient/${id}`,
+      `https://exelligence-backend.herokuapp.com/api/auth/getDetailsofPatient/${id}`,
       {
         method: "GET",
         headers: {
@@ -48,7 +48,7 @@ export default function ViewProfilePatient(props) {
   
   async function getExercise() {
     const response = await fetch(
-      `http://localhost:5000/api/excercise/fetchexercisedoctor/${id}`,
+      `https://exelligence-backend.herokuapp.com/api/excercise/fetchexercisedoctor/${id}`,
       {
         method: "GET",
         headers: {
@@ -91,7 +91,7 @@ export default function ViewProfilePatient(props) {
     let patientName=profile.name
     props.showAlert("Excercise Added Succesfully", "success");
     const response = await fetch(
-      `http://localhost:5000/api/excercise/addExcercise/${id}`,
+      `https://exelligence-backend.herokuapp.com/api/excercise/addExcercise/${id}`,
       {
         method: "POST",
         headers: {
@@ -125,7 +125,7 @@ export default function ViewProfilePatient(props) {
     props.showAlert("Excercise Deleted Succesfully", "success");
     //call api for deleting excercise
     const response = await fetch(
-      `http://localhost:5000/api/excercise/deleteexercise/${ExcId}`,
+      `https://exelligence-backend.herokuapp.com/api/excercise/deleteexercise/${ExcId}`,
       {
         method: "DELETE",
         headers: {

@@ -19,7 +19,7 @@ export const Excercise = (props) => {
   }, []);
   async function getExcercise() {
     const response = await fetch(
-      `http://localhost:5000/api/excercise/fetchtExcercise`,
+      `https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcercise`,
       {
         method: "GET",
         headers: {
@@ -31,7 +31,7 @@ export const Excercise = (props) => {
     setActivity(excercises);
   }
   async function getUser() {
-    const response = await fetch(`http://localhost:5000/api/auth/getUser`, {
+    const response = await fetch(`https://exelligence-backend.herokuapp.com/api/auth/getUser`, {
       method: "GET",
       headers: {
         "auth-token": localStorage.getItem("token"),

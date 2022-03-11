@@ -15,7 +15,7 @@ export const Report = (props) => {
     // eslint-disable-next-line
   }, []);
   async function getReport() {
-    const response = await fetch(`http://localhost:5000/api/excercise/fetchtExcercise`, {
+    const response = await fetch(`https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcercise`, {
       method: "GET",
       headers: {
         "auth-token": localStorage.getItem("token"),

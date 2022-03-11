@@ -58,7 +58,7 @@ export default function Home(props) {
     // eslint-disable-next-line
   }, []);
   async function getAllUsers() {
-    const response = await fetch(`http://localhost:5000/api/auth/getAllusers`, {
+    const response = await fetch(`https://exelligence-backend.herokuapp.com/api/auth/getAllusers`, {
       method: "GET",
       headers: {
         "auth-token": localStorage.getItem("token"),

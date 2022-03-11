@@ -45,7 +45,7 @@ export default function ViewProfile(props) {
   // Separate function to get user details
   async function getUser() {
     const response = await fetch(
-      `http://localhost:5000/api/auth/getDetails/${id}`,
+      `https://exelligence-backend.herokuapp.com/api/auth/getDetails/${id}`,
       {
         method: "GET",
         headers: {
@@ -58,7 +58,7 @@ export default function ViewProfile(props) {
     setreview(data.reviews);
 
     const response2 = await fetch(
-      `http://localhost:5000/api/calendar/fetchallevents/${id}`,
+      `https://exelligence-backend.herokuapp.com/api/calendar/fetchallevents/${id}`,
       {
         method: "GET",
         headers: {
@@ -96,7 +96,7 @@ export default function ViewProfile(props) {
         return;
       }
 
-      const data = await fetch("http://localhost:5000/api/calendar/razorpay", {
+      const data = await fetch("https://exelligence-backend.herokuapp.com/api/calendar/razorpay", {
         method: "POST",
       }).then((t) => t.json());
 
@@ -126,7 +126,7 @@ export default function ViewProfile(props) {
 
       //call api for creating note
       const response = await fetch(
-        `http://localhost:5000/api/calendar/addNotification/${id}`,
+        `https://exelligence-backend.herokuapp.com/api/calendar/addNotification/${id}`,
         {
           method: "POST",
           headers: {
@@ -146,7 +146,7 @@ export default function ViewProfile(props) {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:5000/api/reviews/addreview/${id}`,
+        `https://exelligence-backend.herokuapp.com/api/reviews/addreview/${id}`,
         {
           method: "POST",
           headers: {

@@ -155,12 +155,12 @@ def score():
         headers = {"Content-Type": "application/json"}
         dictToSend = json.dumps(obj)
         response = requests.post(
-            "http://localhost:5000/api/excercise/report",
+            "https://exelligence-backend.herokuapp.com/api/excercise/report",
             data=dictToSend,
             headers=headers,
         )
         return render_template("results.html", obj=obj)
-        # return request("post", "http://localhost:5000/api/exercise/report", data=arr)
+        # return request("post", "https://exelligence-backend.herokuapp.com/api/exercise/report", data=arr)
 
     return render_template("index11.html", res=counter)
 
