@@ -253,7 +253,7 @@ export const SignupPatient = (props) => {
 
                         <div className="text-center mt-4 mb-3 pb-1">
                           <button type="submit" className="btn btn-primary">
-                            Submit
+                            Register
                           </button>
                         </div>
 

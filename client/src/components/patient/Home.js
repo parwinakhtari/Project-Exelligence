@@ -97,11 +97,11 @@ export default function Home(props) {
   };
   return (
     <div className="container">
-      <div className="container">
+      <div className="">
         <h1>Discover Top Doctors</h1>
         <form onSubmit={handleSubmit}>
-          <div className="conatiner mt-3">
-            <div className="container">
+          <div className=" mt-3">
+            <div className="">
               <div className="row">
                 <h5>Filter By Location and Specialization</h5>
                 <div className="col-3">
@@ -147,13 +147,13 @@ export default function Home(props) {
 
         {
           <div className="col-12 mt-3">
-            <div className="row">
+            <div className="row ">
               {usercards.map((usercards, index) => (
-                <div className="col-xl-3 col-md-6 mb-xl-5 mb-7 mb-sm-6 mb-md-6 mb-lg-6 d-flex">
-                  <div className="card" style={{ width: "18rem" }}>
+                <div className="col-xl-3 col-md-6 mb-xl-5 mb-7 mb-sm-6 mb-md-6 mb-lg-6 d-flex my-3 d-flex justify-content-center">
+                  <div className="card" style={{ width: "20rem" }}>
                     <img
                       width="500"
-                      height="250"
+                      height="300"
                       src={usercards.img}
                       className="card-img-top"
                       alt={usercards.name}
