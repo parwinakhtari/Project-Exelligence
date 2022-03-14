@@ -17,7 +17,6 @@ export const Signup = (props) => {
     specialization: "",
     location: "",
     disease: "",
-    otp: Math.floor((Math.random() * 100000) + 1),
   });
 
   const onChange = (e) => {
@@ -59,9 +58,9 @@ export const Signup = (props) => {
       specialization,
       location,
       disease,
-      otp,
     } = credentials;
 
+    const otp = Math.floor((Math.random() * 100000) + 1);
     const response = await fetch(`https://exelligence-backend.herokuapp.com/api/auth/signup`, {
       method: "POST",
       headers: {
@@ -89,7 +88,7 @@ export const Signup = (props) => {
       localStorage.setItem("email", json.user.email);
       localStorage.setItem("role", json.user.role);
       navigate("/homedoctor");
-      props.showAlert("Account Created Succesfully", "success");
+      props.showAlert("Your OTP is", "success", json.user.otp);
     } else {
       props.showAlert("Invalid Details", "danger");
     }

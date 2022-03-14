@@ -28,8 +28,9 @@ export const Login = (props) => {
       localStorage.setItem("role", json.user.role);
       localStorage.setItem("token", json.authToken);
       localStorage.setItem("email", json.user.email);
-      if (localStorage.getItem("role") === "mentor") {
-        navigate("/about");
+      if (localStorage.getItem("role") === "doctor") {
+        navigate("/homedoctor");
+        props.showAlert("Your OTP is", "success", json.user.otp);
       } else navigate("/");
     }
   };

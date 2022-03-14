@@ -41,7 +41,8 @@ router.post("/signup", async (req, res) => {
       img: req.body.img,
       specialization: req.body.specialization,
       location: req.body.location,
-      disease:req.body.disease
+      disease:req.body.disease,
+      otp: req.body.otp,
     });
     const data = {
       session: {

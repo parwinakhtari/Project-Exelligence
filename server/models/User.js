@@ -57,7 +57,7 @@ const UserSchema = new Schema({
     },
   ],
   otp:{
-    type: Number
+    type: String
   } 
 });
 const User = new mongoose.model("user", UserSchema);

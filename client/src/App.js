@@ -23,14 +23,15 @@ import { ReportDoctor } from "./components/doctor/ReportDoctor";
 
 function App() {
   const [alert, setAlert] = useState(null);
-  const showAlert = (message, type) => {
+  const showAlert = (message, type, otp="") => {
     setAlert({
       msg: message,
       type: type,
+      otp: otp,
     });
     setTimeout(() => {
       setAlert(null);
-    }, 3000);
+    }, 5000);
   };
   return (
     <>
