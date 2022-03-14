@@ -176,77 +176,60 @@ export default function ViewProfile(props) {
   }
 
   return (
-    <div className="container">
-      <div className="container rounded bg-white">
-        <div className="row">
-          <div
-            className="w3-content w3-margin-top"
-            style={{ maxWidth: "1400px" }}
-          >
-            <div className="w3-row-padding">
-              <div className="w3-third">
-                <div className="w3-white w3-text-grey w3-card-4">
-                  <div className="w3-display-container">
-                    <img
-                      src={profile.img}
-                      style={{ width: "100%" }}
-                      alt="Avatar"
-                    />
-                  </div>
-                </div>
+    <>
+      <div className="w3-content w3-margin-top" style={{ maxWidth: "1400px" }}>
+        <div className="w3-row-padding">
+          <div className="w3-third">
+            <div className="w3-white w3-text-grey w3-card-4">
+              <div className="w3-display-container">
+                <img src={profile.img} style={{ width: "100%" }} alt="Avatar" />
+              </div>
+              <div className="w3-container" style={{ paddingTop: "15px" }}>
+                <h2 className="w3-text-grey w3-padding-16">
+                  <i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>
+                  {profile.name}
+                </h2>
+                <hr />
+                <p>
+                  <i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>
+                  {profile.specialization} at {profile.hospital}
+                </p>
+                <p>
+                  <i className="fa fa-cogs fa-fw w3-margin-right w3-large w3-text-blue"></i>
+                  Years of experience - {profile.experience}
+                </p>
+                <p>
+                  <i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>
+                  {profile.location}
+                </p>
+                <p>
+                  <i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>
+                  {profile.email}
+                </p>
+                <p>
+                  <i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>
+                  {profile.phone}
+                </p>
+                <p>
+                  <i className="fa fa-book-open fa-fw w3-margin-right w3-large w3-text-blue"></i>
+                  Specialization - {profile.specialization}
+                </p>
+                <p>
+                  <i className="fa fa-money fa-fw w3-margin-right w3-large w3-text-blue"></i>
+                  ₹ 400 Consultation fee
+                </p>
                 <br />
               </div>
-              <div className="w3-twothird">
-                <div className="w3-container w3-card w3-white w3-margin-bottom">
-                  <div className="w3-container">
-                    <br />
-                    <h2 className="w3-text-grey w3-padding-16">
-                      <i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>
-                      About {profile.name}
-                    </h2>
-                    <hr />
-                    <p>
-                      <i className="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>
-                      {profile.specialization} at {profile.hospital}
-                    </p>
-                    <p>
-                      <i className="fa fa-cogs fa-fw w3-margin-right w3-large w3-text-blue"></i>
-                      Years of experience - {profile.experience}
-                    </p>
-                    <p>
-                      <i className="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>
-                      {profile.location}
-                    </p>
-                    <p>
-                      <i className="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>
-                      {profile.email}
-                    </p>
-                    <p>
-                      <i className="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>
-                      {profile.phone}
-                    </p>
-                    <p>
-                      <i className="fa fa-book-open fa-fw w3-margin-right w3-large w3-text-blue"></i>
-                      Specialization - {profile.specialization}
-                    </p>
-                    <p>
-                      <i className="fa fa-money fa-fw w3-margin-right w3-large w3-text-blue"></i>
-                      ₹ 400 Consultation fee
-                    </p>
-                    <br />
-                  </div>
-                </div>
-              </div>
             </div>
+            <br />
           </div>
-          <div className="container card border py-4 mb-5">
-            <div className="col-md-12">
-              <div className="d-flex justify-content-between align-items-center mb-1 ">
-                <h3>Appointment scheduler</h3>
-              </div>
-            </div>
-            <div className="col-md-12 ">
-              <div className="container">
+          <div className="w3-twothird" style={{paddingBottom:"15px"}}>
+            <div className="w3-container w3-card w3-white w3-margin-bottom">
+              <h3 className="w3-text-grey">
+                <i className="fa fa-suitcase fa-fw w3-margin-right w3-xlarge w3-text-blue"></i>
+                Appointments
+              </h3>
+              <div>
                 <h5>Add Appointment Request</h5>
                 <input
                   className="mt-2"
@@ -284,77 +267,78 @@ export default function ViewProfile(props) {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="card card-body  mt-n7 mb-5">
-        <div className="row gx-4 mb-2">
-          <h3 className="mb-0 text-2xl">Testimonial Section</h3>
-          <section style={{ paddingTop: "10px" }}>
-            <div className="container my-3">
-              <div className="row">
-                {review.map((rev) => (
-                  <div className="col-lg-3 col-md-8 pt-3">
-                    <div
-                      className="card  text-white bg-gradient-primary"
-                      style={{ backgroundColor: "#231f38" }}
-                    >
+            <div className="w3-card w3-white">
+              <h3 className="w3-text-grey mx-3" style={{ paddingTop: "20px" }}>
+                <i className="fa fa-certificate fa-fw w3-margin-right w3-xlarge w3-text-blue"></i>
+                Testimonial Section
+              </h3>
+              <section style={{ paddingTop: "1px", paddingBottom: "10px" }}>
+              <div className="container my-3">
+                <div className="row">
+                  {review.map((rev) => (
+                    <div className="col-lg-3 col-md-8 pt-3">
                       <div
-                        className="card-body"
-                        style={{ backgroundColor: "#28223f" }}
+                        className="card  text-white bg-gradient-primary"
+                        style={{ backgroundColor: "#231f38" }}
                       >
-                        <h4 className="mt-0 text-white">{rev.review}</h4>
-                        <div className="author align-items-center mt-2">
-                          <div className="name">
-                            <p
-                              style={{
-                                marginBottom: "0",
-                                color: "rgb(206, 205, 205)",
-                              }}
-                            >
-                              {" "}
-                              {rev.fromName}
-                            </p>
+                        <div
+                          className="card-body"
+                          style={{ backgroundColor: "#28223f" }}
+                        >
+                          <h4 className="mt-0 text-white">{rev.review}</h4>
+                          <div className="author align-items-center mt-2">
+                            <div className="name">
+                              <p
+                                style={{
+                                  marginBottom: "0",
+                                  color: "rgb(206, 205, 205)",
+                                }}
+                              >
+                                {" "}
+                                {rev.fromName}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-                <div className="col-lg-3 mb-lg-0 me-auto my-3">
-                  <div className="card h-100">
-                    <div className="card-body d-flex flex-column justify-content-center text-center">
-                      <i className="fa fa-plus text-secondary mb-3"></i>
-                      <h5 className="text-secondary"> Add Testimonial </h5>
-                      <form onSubmit={handleSubmit}>
-                        <div className="input-group input-group-outline my-3">
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Type a review"
-                            name="reviewmessage"
-                            value={reviewmessage}
-                            onChange={onChange}
-                            required
-                          />
-                        </div>
-                        <div className="d-flex align-items-center justify-content-between mt-1">
-                          <button
-                            type="submit"
-                            className="btn btn-primary btn-sm mb-0"
-                          >
-                            Add Review
-                          </button>
-                        </div>
-                      </form>
+                  ))}
+                  <div className="col-lg-3 mb-lg-0 me-auto my-3">
+                    <div className="card h-100">
+                      <div className="card-body d-flex flex-column justify-content-center text-center">
+                        <i className="fa fa-plus text-secondary mb-3"></i>
+                        <h5 className="text-secondary"> Add Testimonial </h5>
+                        <form onSubmit={handleSubmit}>
+                          <div className="input-group input-group-outline my-3">
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Type a review"
+                              name="reviewmessage"
+                              value={reviewmessage}
+                              onChange={onChange}
+                              required
+                            />
+                          </div>
+                          <div className="d-flex align-items-center justify-content-between mt-1">
+                            <button
+                              type="submit"
+                              className="btn btn-primary btn-sm mb-0"
+                            >
+                              Add Review
+                            </button>
+                          </div>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </section>
             </div>
-          </section>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
