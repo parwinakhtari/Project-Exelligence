@@ -109,43 +109,45 @@ export default function About(props) {
             </div>
             <br />
           </div>
-          <div className="w3-twothird" >
+          <div className="w3-twothird">
             <div className="w3-container w3-card w3-white w3-margin-bottom">
               <h3 className="w3-text-grey">
                 <i className="fa fa-suitcase fa-fw w3-margin-right w3-xlarge w3-text-blue"></i>
                 Appointments
               </h3>
               <div>
-              <Calendar
-              localizer={localizer}
-              events={allEvents}
-              startAccessor="start"
-              endAccessor="start"
-              style={{ height: 500, margin: "50px" }}
-            />
-              <div className="row">
-              {allEvents.map((booking, index) => (
-                <div>
-                  <div className="card" style={{ width: "18rem" }}>
-                    <div className="card-body">
-                      <h4>Appointment for {booking.title}</h4>
-                      <p
-                        className="card-text"
-                        style={{ fontSize: "14px", marginBottom: "0.3rem" }}
-                      >
-                        <b>Date :</b> {booking.start.substring(0, 10)}
-                      </p>
-                      <p
-                        className="card-text"
-                        style={{ fontSize: "14px", marginBottom: "0.3rem" }}
-                      >
-                        <b>Patient :</b> {booking.createdBy}
-                      </p>
-                    </div>
-                  </div>
+                <div style={{ height: 300 }}>
+                  <Calendar
+                    localizer={localizer}
+                    events={allEvents}
+                    startAccessor="start"
+                    endAccessor="start"
+                  />
                 </div>
-              ))}
-            </div>
+
+                <div className="row my-3">
+                  {allEvents.map((booking, index) => (
+                    <div>
+                      <div className="card" style={{ width: "18rem" }}>
+                        <div className="card-body">
+                          <h4>Appointment for {booking.title}</h4>
+                          <p
+                            className="card-text"
+                            style={{ fontSize: "14px", marginBottom: "0.3rem" }}
+                          >
+                            <b>Date :</b> {booking.start.substring(0, 10)}
+                          </p>
+                          <p
+                            className="card-text"
+                            style={{ fontSize: "14px", marginBottom: "0.3rem" }}
+                          >
+                            <b>Patient :</b> {booking.createdBy}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="w3-card w3-white">
@@ -154,45 +156,52 @@ export default function About(props) {
                 Testimonial Section
               </h3>
               <div>
-              {profile.reviews && profile.reviews.length === 0 ? (
-              <h5 className="mt-3" style={{paddingLeft:"30px", paddingBottom:"25px"}}>No testimonials Yet </h5>
-            ) : (
-              ""
-            )}
-            {profile.reviews &&
-              profile.reviews.map((rev) => (
-                <section style={{ padding: "2px" }}>
-                  <div className="container my-3">
-                    <div className="row">
-                      <div className="col-lg-3 col-md-8 pt-3">
-                        <div
-                          className="card  text-white bg-gradient-primary"
-                          style={{ backgroundColor: "#231f38" }}
-                        >
-                          <div
-                            className="card-body"
-                            style={{ backgroundColor: "#28223f" }}
-                          >
-                            <h4 className="mt-0 text-white">{rev.review}</h4>
-                            <div className="author align-items-center mt-2">
-                              <div className="name">
-                                <p
-                                  style={{
-                                    marginBottom: "0",
-                                    color: "rgb(206, 205, 205)",
-                                  }}
-                                >
-                                  {rev.fromName}
-                                </p>
+                {profile.reviews && profile.reviews.length === 0 ? (
+                  <h5
+                    className="mt-3"
+                    style={{ paddingLeft: "30px", paddingBottom: "25px" }}
+                  >
+                    No testimonials Yet{" "}
+                  </h5>
+                ) : (
+                  ""
+                )}
+                {profile.reviews &&
+                  profile.reviews.map((rev) => (
+                    <section style={{ padding: "2px" }}>
+                      <div className="container my-3">
+                        <div className="row">
+                          <div className="col-lg-3 col-md-8 pt-3">
+                            <div
+                              className="card  text-white bg-gradient-primary"
+                              style={{ backgroundColor: "#231f38" }}
+                            >
+                              <div
+                                className="card-body"
+                                style={{ backgroundColor: "#28223f" }}
+                              >
+                                <h4 className="mt-0 text-white">
+                                  {rev.review}
+                                </h4>
+                                <div className="author align-items-center mt-2">
+                                  <div className="name">
+                                    <p
+                                      style={{
+                                        marginBottom: "0",
+                                        color: "rgb(206, 205, 205)",
+                                      }}
+                                    >
+                                      {rev.fromName}
+                                    </p>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </section>
-              ))}
+                    </section>
+                  ))}
               </div>
             </div>
           </div>

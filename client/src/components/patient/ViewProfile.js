@@ -96,9 +96,12 @@ export default function ViewProfile(props) {
         return;
       }
 
-      const data = await fetch("https://exelligence-backend.herokuapp.com/api/calendar/razorpay", {
-        method: "POST",
-      }).then((t) => t.json());
+      const data = await fetch(
+        "https://exelligence-backend.herokuapp.com/api/calendar/razorpay",
+        {
+          method: "POST",
+        }
+      ).then((t) => t.json());
 
       console.log(data);
 
@@ -109,9 +112,13 @@ export default function ViewProfile(props) {
         order_id: data.id,
         name: "Exelligence",
         description: "Pay the following amount to book doctor",
-        image: "https://res.cloudinary.com/rapidhack/image/upload/v1643878114/Medibles-logo_wpyytn.png",
+        image:
+          "https://res.cloudinary.com/rapidhack/image/upload/v1643878114/Medibles-logo_wpyytn.png",
         handler: function(response) {
-          props.showAlert("Payment Success!! Event Request Has been Sent to the Doctor Succesfully", "success");
+          props.showAlert(
+            "Payment Success!! Event Request Has been Sent to the Doctor Succesfully",
+            "success"
+          );
           // alert(response.razorpay_payment_id);
           // alert(response.razorpay_order_id);
           // alert(response.razorpay_signature);
@@ -234,49 +241,48 @@ export default function ViewProfile(props) {
           </div>
           <div className="container card border py-4 mb-5">
             <div className="col-md-12">
-              <div className="d-flex justify-content-between align-items-center mb-1 mx-5">
-                <h3 className="text-right">Appointment scheduler</h3>
+              <div className="d-flex justify-content-between align-items-center mb-1 ">
+                <h3>Appointment scheduler</h3>
               </div>
             </div>
             <div className="col-md-12 ">
-              <div className="container mx-5">
+              <div className="container">
                 <h5>Add Appointment Request</h5>
                 <input
                   className="mt-2"
                   type="text"
                   placeholder="Add Title"
-                  style={{ width: "20%", marginRight: "10px" }}
                   value={newEvent.title}
                   onChange={(e) =>
                     setNewEvent({ ...newEvent, title: e.target.value })
                   }
                   required
                 />
-
+                &nbsp;
                 <input
                   className="mt-2"
-                  style={{ marginRight: "10px" }}
                   type="date"
                   selected={newEvent.start}
                   onChange={(e) => {
                     setNewEvent({ ...newEvent, start: e.target.value });
                   }}
                 />
+                &nbsp;
                 <button
-                  className="btn btn-primary "
-                  stlye={{ marginTop: "10px" }}
+                  className="btn btn-sm btn-primary my-2"
                   onClick={handleAddEvent}
                 >
                   Add Event
                 </button>
               </div>
-              <Calendar
-                localizer={localizer}
-                events={allEvents}
-                startAccessor="start"
-                endAccessor="start"
-                style={{ height: 500, margin: "50px" }}
-              />
+              <div style={{ height: 300 }}>
+                <Calendar
+                  localizer={localizer}
+                  events={allEvents}
+                  startAccessor="start"
+                  endAccessor="start"
+                />
+              </div>
             </div>
           </div>
         </div>

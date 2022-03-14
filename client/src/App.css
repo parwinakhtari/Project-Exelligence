@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.rbc-toolbar{
+  display: none !important;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
