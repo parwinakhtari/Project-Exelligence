@@ -56,6 +56,9 @@ const UserSchema = new Schema({
       patientDate: Date,
     },
   ],
+  otp:{
+    type: Number
+  } 
 });
 const User = new mongoose.model("user", UserSchema);
 User.createIndexes();

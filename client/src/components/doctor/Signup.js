@@ -17,6 +17,7 @@ export const Signup = (props) => {
     specialization: "",
     location: "",
     disease: "",
+    otp: Math.floor((Math.random() * 100000) + 1),
   });
 
   const onChange = (e) => {
@@ -58,6 +59,7 @@ export const Signup = (props) => {
       specialization,
       location,
       disease,
+      otp,
     } = credentials;
 
     const response = await fetch(`https://exelligence-backend.herokuapp.com/api/auth/signup`, {
@@ -77,6 +79,7 @@ export const Signup = (props) => {
         specialization,
         location,
         disease,
+        otp,
       }),
     });
     const json = await response.json();
