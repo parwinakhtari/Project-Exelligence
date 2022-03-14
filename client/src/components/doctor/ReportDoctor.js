@@ -11,10 +11,33 @@ export const ReportDoctor = (props) => {
     if (localStorage.getItem("role") === "patient") {
       navigate("*");
     }
-    getReport();
+    otpconf();
     // eslint-disable-next-line
   }, []);
+  async function otpconf() {
+    const response = await fetch(
+      `https://exelligence-backend.herokuapp.com/api/auth/getUser`,
+      {
+        method: "GET",
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+        },
+      }
+    );
+    const data = await response.json();
+    console.log(data.otp);
+    let otpenter = prompt("Type your otp to view patients report");
+    while (otpenter !== data.otp) {
+      otpenter = prompt("Oops!! wrong otp please try again to view patients report");
+    }
+    if (otpenter === data.otp) {
+      props.showAlert("YAYY!! OTP matched now you can see patients reports", "success");
+      getReport();
+    }
+  }
+
   async function getReport() {
+    console.log("hahahha");
     const response = await fetch(
       `https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcerciseDoctor`,
       {
@@ -34,7 +57,7 @@ export const ReportDoctor = (props) => {
         <h2>Patients Final Activity Report</h2>
 
         <h4 className="mt-2">
-          {excerciseList.length === 0 && "No Reports Yet"}
+          {excerciseList.length === 0 && "Either No reports or you havent confirmed your OTP yet"}
         </h4>
 
         {/* // excerciseList.map((activity, index) =>
@@ -57,7 +80,10 @@ export const ReportDoctor = (props) => {
                         <div key={index} className="w3-container">
                           <div className="card-body">
                             <h3>
-                              Final report of: <b style={{fontSize:'18px'}}>{activity.patientName}</b>
+                              Final report of:{" "}
+                              <b style={{ fontSize: "18px" }}>
+                                {activity.patientName}
+                              </b>
                               <Link
                                 type="button"
                                 className="btn btn-primary btn-sm mx-2"
