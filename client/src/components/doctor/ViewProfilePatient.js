@@ -197,7 +197,7 @@ export default function ViewProfilePatient(props) {
               <div className="w3-full">
                 <div className="w3-container w3-card w3-white w3-margin-bottom">
                   <h3>Excercise assign</h3>
-                  <div className="w3-container">
+                  <div >
                     <form onSubmit={handleExcerciseSubmit}>
                       {excercise.map((element, index) => (
                         <div key={index}>
@@ -245,8 +245,9 @@ export default function ViewProfilePatient(props) {
                             </div>
                           </div>
 
+
                           <div className="w3-half mt-1">
-                            <div className="mb-1 mx-2">
+                            <div className="mb-1">
                               <input
                                 type="number"
                                 className="form-control "
@@ -277,7 +278,7 @@ export default function ViewProfilePatient(props) {
                             </div>
                           </div>
                           <div className="w3-half mt-1">
-                            <div className="mb-1 mx-2">
+                            <div className="mb-1">
                               <input
                                 type="number"
                                 className="form-control "
@@ -353,18 +354,18 @@ export default function ViewProfilePatient(props) {
                       : { backgroundColor: "white" }
                   }
                 >
-                  <div key={index} className="w3-container ">
+                  <div key={index} className="">
                     <div className="card-body">
                       <div className="row">
-                        <div className="col-10">
+                        <div className="col-8">
                           <h4>
-                            Course Assigned{" "}
+                            Course Assigned
                             {activity.completed ? " - completed" : ""}
                           </h4>
                         </div>
-                        <div className="col-2 float-end">
+                        <div className="col-4">
                           <button
-                            className="btn btn-danger "
+                            className="btn btn-sm btn-danger btn-block"
                             onClick={() => {
                               deleteExcercise(activity._id);
                             }}
