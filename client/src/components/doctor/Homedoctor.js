@@ -38,11 +38,11 @@ export default function Homedoctor(props) {
             <div className="row">
               {usercards.enrolledPatient &&
                 usercards.enrolledPatient.map((usercard, index) => (
-                  <div className="col-xl-3 col-md-6 mb-xl-5 mb-7 mb-sm-6 mb-md-6 mb-lg-6 d-flex">
+                  <div className="col-xl-3 col-md-6 mb-xl-5 mb-7 mb-sm-6 mb-md-6 mb-lg-6 my-3 d-flex justify-content-center">
                     <div className="card" style={{ width: "18rem" }}>
                       <img
                         width="500"
-                        height="250"
+                        height="300"
                         src={usercard.patientImage}
                         className="card-img-top"
                         alt={usercard.patientName}
