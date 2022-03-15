@@ -43,6 +43,7 @@ router.post("/signup", async (req, res) => {
       location: req.body.location,
       disease:req.body.disease,
       otp: req.body.otp,
+      aroms: [],
     });
     const data = {
       session: {
