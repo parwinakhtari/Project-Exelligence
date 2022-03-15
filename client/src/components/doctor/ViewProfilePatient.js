@@ -199,13 +199,10 @@ export default function ViewProfilePatient(props) {
                           <option defaultValue="">
                             Select Exercise To Assign
                           </option>
-                          <option value="elbow flexsion">Elbow Flexsion</option>
-                          <option value="elbow busitis">Elbow Busitis</option>
-                          <option value="tennis elbow">Tennis Elbow</option>
-                          <option value="butt bridge">Butt Bridge</option>
-                          <option value="Stretches for lower back">
-                            Stretches for lower back
-                          </option>
+                          <option value="lateral flexion">Lateral Flexion</option>
+                          <option value="squats">Squats</option>
+                          <option value="lunges">Lunges</option>
+                          <option value="extension">Extension</option>
                         </select>
                       </div>
                       <div className="w3-half mt-1">
