@@ -146,9 +146,9 @@ export default function ViewProfile(props) {
       await response.json({ title, start, createdBy });
       setNewEvent({ title: "", start: "" });
       props.showAlert(
-              "Appointment Success!! Event Request Has been Sent to the Doctor Succesfully",
-              "success"
-            );
+        "Appointment Success!! Please record your AROMs for better evaluation",
+        "success"
+      );
     } catch (error) {
       return error;
     }
@@ -227,7 +227,7 @@ export default function ViewProfile(props) {
             </div>
             <br />
           </div>
-          <div className="w3-twothird" style={{paddingBottom:"15px"}}>
+          <div className="w3-twothird" style={{ paddingBottom: "15px" }}>
             <div className="w3-container w3-card w3-white w3-margin-bottom">
               <h3 className="w3-text-grey">
                 <i className="fa fa-suitcase fa-fw w3-margin-right w3-xlarge w3-text-blue"></i>
@@ -277,68 +277,68 @@ export default function ViewProfile(props) {
                 Testimonial Section
               </h3>
               <section style={{ paddingTop: "1px", paddingBottom: "10px" }}>
-              <div className="container my-3">
-                <div className="row">
-                  {review.map((rev) => (
-                    <div className="col-lg-3 col-md-8 pt-3">
-                      <div
-                        className="card  text-white bg-gradient-primary"
-                        style={{ backgroundColor: "#231f38" }}
-                      >
+                <div className="container my-3">
+                  <div className="row">
+                    {review.map((rev) => (
+                      <div className="col-lg-3 col-md-8 pt-3">
                         <div
-                          className="card-body"
-                          style={{ backgroundColor: "#28223f" }}
+                          className="card  text-white bg-gradient-primary"
+                          style={{ backgroundColor: "#231f38" }}
                         >
-                          <h4 className="mt-0 text-white">{rev.review}</h4>
-                          <div className="author align-items-center mt-2">
-                            <div className="name">
-                              <p
-                                style={{
-                                  marginBottom: "0",
-                                  color: "rgb(206, 205, 205)",
-                                }}
-                              >
-                                {" "}
-                                {rev.fromName}
-                              </p>
+                          <div
+                            className="card-body"
+                            style={{ backgroundColor: "#28223f" }}
+                          >
+                            <h4 className="mt-0 text-white">{rev.review}</h4>
+                            <div className="author align-items-center mt-2">
+                              <div className="name">
+                                <p
+                                  style={{
+                                    marginBottom: "0",
+                                    color: "rgb(206, 205, 205)",
+                                  }}
+                                >
+                                  {" "}
+                                  {rev.fromName}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
-                  <div className="col-lg-3 mb-lg-0 me-auto my-3">
-                    <div className="card h-100">
-                      <div className="card-body d-flex flex-column justify-content-center text-center">
-                        <i className="fa fa-plus text-secondary mb-3"></i>
-                        <h5 className="text-secondary"> Add Testimonial </h5>
-                        <form onSubmit={handleSubmit}>
-                          <div className="input-group input-group-outline my-3">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Type a review"
-                              name="reviewmessage"
-                              value={reviewmessage}
-                              onChange={onChange}
-                              required
-                            />
-                          </div>
-                          <div className="d-flex align-items-center justify-content-between mt-1">
-                            <button
-                              type="submit"
-                              className="btn btn-primary btn-sm mb-0"
-                            >
-                              Add Review
-                            </button>
-                          </div>
-                        </form>
+                    ))}
+                    <div className="col-lg-3 mb-lg-0 me-auto my-3">
+                      <div className="card h-100">
+                        <div className="card-body d-flex flex-column justify-content-center text-center">
+                          <i className="fa fa-plus text-secondary mb-3"></i>
+                          <h5 className="text-secondary"> Add Testimonial </h5>
+                          <form onSubmit={handleSubmit}>
+                            <div className="input-group input-group-outline my-3">
+                              <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Type a review"
+                                name="reviewmessage"
+                                value={reviewmessage}
+                                onChange={onChange}
+                                required
+                              />
+                            </div>
+                            <div className="d-flex align-items-center justify-content-between mt-1">
+                              <button
+                                type="submit"
+                                className="btn btn-primary btn-sm mb-0"
+                              >
+                                Add Review
+                              </button>
+                            </div>
+                          </form>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
             </div>
           </div>
         </div>

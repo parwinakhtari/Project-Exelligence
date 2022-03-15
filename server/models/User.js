@@ -58,7 +58,14 @@ const UserSchema = new Schema({
   ],
   otp:{
     type: String
-  } 
+  } ,
+  aroms:[
+    {
+      name: String,
+      min: String,
+      max:String,
+    }
+  ]
 });
 const User = new mongoose.model("user", UserSchema);
 User.createIndexes();

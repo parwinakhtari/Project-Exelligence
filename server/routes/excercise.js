@@ -195,4 +195,29 @@ router.put("/completeExcercise/:id", fetchUser, async (req, res) => {
   }
 });
 
+// ROUTE 10 : add report for patient portal : Login not required
+router.post("/aromsrecord", async (req, res) => {
+  try {
+    // const user =  await User.findById(req.user.id);
+    const { name, userid, min, max } = req.body;
+
+    const patient = await User.findById(userid);
+    const aromsobj = {
+      name: name,
+      min: min,
+      max: max,
+    };
+    await patient.aroms.push(aromsobj);
+    const patientarom = await patient.save();
+    console.log(req.body);
+    if (!patient) {
+      return res.status(404).send("Permission not granted");
+    }
+    res.send("AROM record saved succesfully");
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json("Oops internal server error occured");
+  }
+});
+
 module.exports = router;
