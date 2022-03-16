@@ -73,7 +73,7 @@ export const Excercise = (props) => {
                                 <a
                                 type="button"
                                 className="btn btn-success mx-2"
-                                href={`http://127.0.0.1:8000/${excercise.name
+                                href={`https://pao.butterscotch.tech/${excercise.name
                                   .split(" ")
                                   .join("")}/left,${excercise.severity},${excercise.perActivityTime},${profile._id},${excercise._id},${activity._id}`}
                                 target="_blank"
@@ -88,7 +88,7 @@ export const Excercise = (props) => {
                               <a
                                 type="button"
                                 className="btn btn-primary"
-                                href={`http://127.0.0.1:8000/${excercise.name
+                                href={`https://pao.butterscotch.tech/${excercise.name
                                   .split(" ")
                                   .join("")}/right,${excercise.severity},${excercise.perActivityTime},${profile._id},${excercise._id},${activity._id}`}
                                 target="_blank"
@@ -107,7 +107,7 @@ export const Excercise = (props) => {
                                 <a
                                 type="button"
                                 className="btn btn-success"
-                                href={`http://127.0.0.1:8000/${excercise.name
+                                href={`https://pao.butterscotch.tech/${excercise.name
                                   .split(" ")
                                   .join("")}/${excercise.severity},${excercise.perActivityTime},${profile._id},${excercise._id},${activity._id}`}
                                 target="_blank"
