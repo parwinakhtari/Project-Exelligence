@@ -177,52 +177,69 @@ export default function ViewProfilePatient(props) {
             </div>
             <br />
           </div>
-          <div>
-          {profile.aroms?(
-          <>
-          <div className="w3-container w3-card w3-white w3-margin-bottom mt-5">
-            <div className="row">
-              <div className="w3-container">
-                <div className="card-body">
-                  <div class="table-responsive">
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th scope="col" className="text-center">
-                            Activity
-                          </th>
-                          <th scope="col" className="text-center">
-                            Min angle
-                          </th>
-                          <th scope="col" className="text-center">
-                            Max Angle
-                          </th>
-                        </tr>
-                      </thead>
-                      {profile.aroms.map((activity, index) => (
-                              <>
-                                <tbody>
+          <div></div>
+          <div className="w3-twothird">
+            <div className="w3-container w3-card w3-white w3-margin-bottom">
+              <h3 className="w3-text-grey w3-padding-16">
+                <i className="fa fa-suitcase fa-fw w3-margin-right w3-xlarge w3-text-blue"></i>
+                AROMS Report
+              </h3>
+              <div>
+                {profile.aroms ? (
+                  <>
+                    <div className=" w3-white w3-margin-bottom">
+                      <div className="row">
+                        <div>
+                          <div className="card-body">
+                            <div class="table-responsive">
+                              <table className="table">
+                                <thead>
                                   <tr>
-                                    <td className="text-center">{activity.name}</td>
-                                    <td className="text-center">{Math.round((activity.min)*1000)/1000} degree</td>
-                                    <td className="text-center">{Math.round((activity.max)*1000)/1000} degree</td>
+                                    <th scope="col" className="text-center">
+                                      Activity
+                                    </th>
+                                    <th scope="col" className="text-center">
+                                      Min angle
+                                    </th>
+                                    <th scope="col" className="text-center">
+                                      Max Angle
+                                    </th>
                                   </tr>
-                                </tbody>
-                              </>
-                            ))}
-                    </table>
-                  </div>
-                </div>
+                                </thead>
+                                {profile.aroms.map((activity, index) => (
+                                  <>
+                                    <tbody>
+                                      <tr>
+                                        <td className="text-center">
+                                          {activity.name}
+                                        </td>
+                                        <td className="text-center">
+                                          {Math.round(activity.min * 1000) /
+                                            1000}{" "}
+                                          degree
+                                        </td>
+                                        <td className="text-center">
+                                          {Math.round(activity.max * 1000) /
+                                            1000}{" "}
+                                          degree
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </>
+                                ))}
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
-          </div>
-        </>
-        ):
-          <>
-          </>
-        }
-          </div>
-          <div className="w3-twothird">
+
             <div className="w3-container w3-card w3-white w3-margin-bottom">
               <h3 className="w3-text-grey w3-padding-16">
                 <i className="fa fa-suitcase fa-fw w3-margin-right w3-xlarge w3-text-blue"></i>
@@ -244,7 +261,9 @@ export default function ViewProfilePatient(props) {
                           <option defaultValue="">
                             Select Exercise To Assign
                           </option>
-                          <option value="lateral flexion">Lateral Flexion</option>
+                          <option value="lateral flexion">
+                            Lateral Flexion
+                          </option>
                           <option value="squats">Squats</option>
                           <option value="lunges">Lunges</option>
                           <option value="extension">Extension</option>

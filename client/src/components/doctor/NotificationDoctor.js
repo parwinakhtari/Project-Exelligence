@@ -107,7 +107,7 @@ export default function NotificationDoctor(props) {
             {profile.length === 0 && "No Appointment Requests Yet"}
           </h5>
           {profile.map((profile, index) => (
-            <div className="col-4 mb-xl-5 mb-7 mb-sm-6 mb-md-6 mb-lg-6 d-flex">
+            <div>
               <div className="card" style={{ width: "18rem" }}>
                 <div className="card-body">
                   <h4>Appointment for {profile.title}</h4>
@@ -117,6 +117,7 @@ export default function NotificationDoctor(props) {
                   >
                     <b>Date :</b> {profile.start.substring(0, 10)}
                   </p>
+                  <b>Requested By :</b>
                   <p
                     className="card-text"
                     style={{ fontSize: "14px", marginBottom: "1rem" }}
@@ -124,14 +125,14 @@ export default function NotificationDoctor(props) {
                   to={`/viewProfilePatient/${profile.createdById}`}
                   className="btn btn-primary"
                 >
-                  <b>Requested By :</b> {profile.createdBy}
+                   {profile.createdBy}
 
                 </Link>
 
                   </p>
 
                   <button
-                    className="btn btn-success mx-2"
+                    className="btn btn-success"
                     onClick={() => {
                       handleAddEvent(
                         profile.title,
@@ -145,7 +146,7 @@ export default function NotificationDoctor(props) {
                     Accept
                   </button>
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-danger mx-2"
                     onClick={() => {
                       handleReject(profile._id);
                     }}
