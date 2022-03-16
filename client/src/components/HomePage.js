@@ -23,7 +23,7 @@ export const HomePage = () => {
                   <h3>Why Choose Exelligence?</h3>
                   <p>
                     Get digital prescriptions, monitoring your progress with
-                    advanced AI features, being a part of patients - community.
+                    advanced AI features.
                     Get personalized one-to-one attentions by health
                     professionals till completely recovery .
                   </p>
@@ -32,165 +32,6 @@ export const HomePage = () => {
                       Learn More <i className="bx bx-chevron-right"></i>
                     </a>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="services" className="services section-bg">
-          <div className="container">
-            <div className="section-title">
-              <h2>Features</h2>
-            </div>
-
-            <div className="row">
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-heartbeat"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Activity Create (Assign)</a>
-                  </h4>
-                  <p>
-                    Doctors can assign different post recovery workouts to
-                    patients according to their requirements for complete
-                    recovery which will be monitored by deep learning
-                    algorithms. They can also track daily progress.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-pills"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Assign Digital Prescription</a>
-                  </h4>
-                  <p>
-                    It allows medical practitioners to write and send
-                    prescriptions electronically which will enhance patient
-                    safety, increase access to patient prescription records, and
-                    improve pharmacy workflow.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-hospital-user"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Activity Tracker</a>
-                  </h4>
-                  <p>
-                    Analyzing patient’s performed activity using MediaPipe Pose.
-                    It is a ML solution for high-fidelity body pose tracking,
-                    inferring 3D landmarks and background segmentation mask on
-                    the whole body from input video frames .
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-dna"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Patient Community</a>
-                  </h4>
-                  <p>
-                    Patients connect with others who have the same disease or
-                    condition and track and share their own experiences. Users
-                    can get information and update the diseases, conditions, and
-                    related symptoms every day on the platform
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-wheelchair"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Daily Medicine Remainder</a>
-                  </h4>
-                  <p>
-                    Reminding users for taking medicines ad per the given time
-                    schedule by doctor.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-notes-medical"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Online Pharmacy</a>
-                  </h4>
-                  <p>
-                    There are times when the Patient are unable to obtain the
-                    medicine they reqire, so we have designed an inbuilt
-                    function that allows them to browse any medicine of their
-                    choice and provide them link to the online site so that they
-                    can buy easily.
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-notes-medical"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Communication tools​</a>
-                  </h4>
-                  <p>
-                    A chat featurae on the website, where doctors and patient
-                    can communicate. They can also share media files like pdf,
-                    pictures. This will help with effective communication
-                    between doctor and patient.
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-dna"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Patient Testimonial</a>
-                  </h4>
-                  <p>
-                    Patients can review the doctors with whom they have
-                    enrolled. This will also assist all new commers in learning
-                    more about the doctors.
-                  </p>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-                <div className="icon-box">
-                  <div className="icon">
-                    <i className="fas fa-notes-medical"></i>
-                  </div>
-                  <h4>
-                    <a href="/">Appointment Scheduling</a>
-                  </h4>
-                  <p>
-                    Patients can see doctors calender shedule and accordingly
-                    send a booking request. If the doctor accepts, the
-                    appointment, then the patient gets enrolled and it is shown
-                    in the patients profile. Patients have to pay the
-                    consultation fees on visit.
-                  </p>
                 </div>
               </div>
             </div>
@@ -376,16 +217,13 @@ export const HomePage = () => {
         <section id="team" className="team section-bg">
           <div className="container" data-aos="fade-up">
             <div className="section-title">
-              <h2>Team</h2>
-              <p>
-                Team Nutella, a group of 3 tech enthusiast from NIT Rourkela
-              </p>
+              <h2>Team Nutella</h2>
             </div>
 
             <div className="row">
-              <div className="col-lg-4">
+              <div className="col-lg-3">
                 <div
-                  className="member d-flex align-items-start"
+                  className="member align-items-center"
                   data-aos="zoom-in"
                   data-aos-delay="100"
                 >
@@ -398,18 +236,13 @@ export const HomePage = () => {
                   </div>
                   <div className="member-info">
                     <h4>Parwin Akhtari </h4>
-
-                    <p>
-                      An Aspiring developer and tech enthusiast. Interested in
-                      Problem Solving.{" "}
-                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="col-lg-4 mt-4 mt-lg-0">
+              <div className="col-lg-3 mt-4 mt-lg-0">
                 <div
-                  className="member d-flex align-items-start"
+                  className="member align-items-center"
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
@@ -422,18 +255,13 @@ export const HomePage = () => {
                   </div>
                   <div className="member-info">
                     <h4>Siddharth Sharma</h4>
-
-                    <p>
-                      I'm a passionate Learner and tech enthusiast, currently
-                      learning Machine Learning
-                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="col-lg-4">
+              <div className="col-lg-3 mt-4 mt-lg-0 justify-content-center">
                 <div
-                  className="member d-flex align-items-start"
+                  className="member justify-content-center"
                   data-aos="zoom-in"
                   data-aos-delay="100"
                 >
@@ -446,13 +274,28 @@ export const HomePage = () => {
                   </div>
                   <div className="member-info">
                     <h4>Alpana Nanda</h4>
-
-                    <p>
-                      I seek new challenges and try to think out-of-the-box
-                      while solving a problem.
-                    </p>
                   </div>
                 </div>
+                
+              </div>
+              <div className="col-lg-3 mt-4 mt-lg-0">
+                <div
+                  className="member align-items-start"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <div className="pic">
+                    <img
+                      src="/img/team/team-4.jpeg"
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <div className="member-info">
+                    <h4>Akshay Agrawal</h4>
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>
