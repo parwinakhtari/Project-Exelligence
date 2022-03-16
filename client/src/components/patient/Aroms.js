@@ -39,8 +39,8 @@ export const Aroms = () => {
         <h5>For Back Pain</h5>
         <a
           type="button"
-          className="btn btn-success mx-2"
-          href={`http://127.0.0.1:8000/aroms/flexion${profile._id}`}
+          className="btn btn-success"
+          href={`https://pao.butterscotch.tech/aroms/flexion${profile._id}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -48,8 +48,8 @@ export const Aroms = () => {
         </a>
         <a
           type="button"
-          className="btn btn-success mx-2"
-          href={`http://127.0.0.1:8000/aroms/extension,${profile._id}`}
+          className="btn btn-success  my-3"
+          href={`https://pao.butterscotch.tech/aroms/extension,${profile._id}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -57,44 +57,56 @@ export const Aroms = () => {
         </a>
         <a
           type="button"
-          className="btn btn-success mx-2"
-          href={`http://127.0.0.1:8000/aroms/lateralflexion${profile._id}`}
+          className="btn btn-success"
+          href={`https://pao.butterscotch.tech/aroms/lateralflexion,${profile._id}`}
           target="_blank"
           rel="noreferrer"
         >
           Record Aroms for Lateral flexion
         </a>
-        {profile.arom && profile.aroms.map((activity, index) => (
+        {profile.aroms?(
           <>
-            <>
-              <div className="w3-container w3-card w3-white w3-margin-bottom">
-                <div className="row">
-                  <div key={index} className="w3-container">
-                    <div className="card-body">
-                      <div class="table-responsive">
-                        <table className="table">
-                          <thead>
-                            <tr>
-                              <th scope="col" className="text-center">
-                                Activity
-                              </th>
-                              <th scope="col" className="text-center">
-                                Min angle
-                              </th>
-                              <th scope="col" className="text-center">
-                                Max Angle
-                              </th>
-                            </tr>
-                          </thead>
-                        </table>
-                      </div>
-                    </div>
+          <div className="w3-container w3-card w3-white w3-margin-bottom mt-5">
+            <div className="row">
+              <div className="w3-container">
+                <div className="card-body">
+                  <div class="table-responsive">
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th scope="col" className="text-center">
+                            Activity
+                          </th>
+                          <th scope="col" className="text-center">
+                            Min angle
+                          </th>
+                          <th scope="col" className="text-center">
+                            Max Angle
+                          </th>
+                        </tr>
+                      </thead>
+                      {profile.aroms.map((activity, index) => (
+                              <>
+                                <tbody>
+                                  <tr>
+                                    <td className="text-center">{activity.name}</td>
+                                    <td className="text-center">{Math.round((activity.min)*1000)/1000} degree</td>
+                                    <td className="text-center">{Math.round((activity.max)*1000)/1000} degree</td>
+                                  </tr>
+                                </tbody>
+                              </>
+                            ))}
+                    </table>
                   </div>
                 </div>
               </div>
-            </>
+            </div>
+          </div>
+        </>
+        ):
+          <>
           </>
-        ))}
+        }
       </div>
     </div>
   );

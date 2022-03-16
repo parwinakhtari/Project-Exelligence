@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function NotificationDoctor(props) {
   let navigate = useNavigate();
@@ -120,8 +120,14 @@ export default function NotificationDoctor(props) {
                   <p
                     className="card-text"
                     style={{ fontSize: "14px", marginBottom: "1rem" }}
-                  >
-                    <b>Requested By :</b> {profile.createdBy}
+                  ><Link
+                  to={`/viewProfilePatient/${profile.createdById}`}
+                  className="btn btn-primary"
+                >
+                  <b>Requested By :</b> {profile.createdBy}
+
+                </Link>
+
                   </p>
 
                   <button
