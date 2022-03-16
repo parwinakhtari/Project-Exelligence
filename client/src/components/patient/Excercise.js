@@ -55,17 +55,19 @@ export const Excercise = (props) => {
                       <div className="card-body">
                         <div className={`alert mx-4 alert-info`} role="alert">
                           <div className="row">
-                            <div className="col-7 justify-content-center align-self-center">
+                            <div className="col-7 col-sm-8 justify-content-center align-self-center">
                               <b>Exercise Name: </b>
                               {excercise.name} &nbsp; &nbsp;&nbsp;
+                              <br></br>
                               <b>Per activity time:</b>{" "}
                               {excercise.perActivityTime} seconds &nbsp;
                               &nbsp;&nbsp;
+                              <br></br>
                               <b>Total time to do: </b>
                               {excercise.total}
                             </div>
 
-                            <div className="col-5">
+                            <div className="col-5 col-sm-3">
                               {leftrightExercise.includes(excercise.name) ? (
                                 <>
                                 Select which side is in pain

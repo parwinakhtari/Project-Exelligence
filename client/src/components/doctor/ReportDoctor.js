@@ -57,7 +57,7 @@ export const ReportDoctor = (props) => {
         <h2>Patients Final Activity Report</h2>
 
         <h4 className="mt-2">
-          {excerciseList.length === 0 && "Either No reports or you havent confirmed your OTP yet"}
+          {excerciseList.length === 0 && "No reports yet"}
         </h4>
 
         {/* // excerciseList.map((activity, index) =>
@@ -114,9 +114,9 @@ export const ReportDoctor = (props) => {
                                     <th scope="col" className="text-center">
                                       Patient's Time Taken
                                     </th>
-                                    <th scope="col" className="text-center">
+                                    {/* <th scope="col" className="text-center">
                                       Activity Rate: Completed / Given
-                                    </th>
+                                    </th> */}
                                     <th scope="col" className="text-center">
                                       Error
                                     </th>
@@ -138,8 +138,8 @@ export const ReportDoctor = (props) => {
                                         </td>
                                         <td className="text-center">
                                           {Math.round(
-                                            (reportObj.counter /
-                                              reportObj.timer) *
+                                            (reportObj.timer /
+                                              reportObj.counter) *
                                               1000
                                           ) / 1000}
                                           /{excercise.perActivityTime}

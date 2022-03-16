@@ -182,7 +182,7 @@ export default function ViewProfilePatient(props) {
             <div className="w3-container w3-card w3-white w3-margin-bottom">
               <h3 className="w3-text-grey w3-padding-16">
                 <i className="fa fa-suitcase fa-fw w3-margin-right w3-xlarge w3-text-blue"></i>
-                AROMS Report
+                AROMS Report for Back pain
               </h3>
               <div>
                 {profile.aroms ? (

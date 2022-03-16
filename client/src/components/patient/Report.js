@@ -15,12 +15,15 @@ export const Report = (props) => {
     // eslint-disable-next-line
   }, []);
   async function getReport() {
-    const response = await fetch(`https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcercise`, {
-      method: "GET",
-      headers: {
-        "auth-token": localStorage.getItem("token"),
-      },
-    });
+    const response = await fetch(
+      `https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcercise`,
+      {
+        method: "GET",
+        headers: {
+          "auth-token": localStorage.getItem("token"),
+        },
+      }
+    );
     const data = await response.json();
     console.log(data);
     setexcerciseList(data);
@@ -63,28 +66,56 @@ export const Report = (props) => {
                               <table className="table">
                                 <thead>
                                   <tr>
-                                    <th scope="col" >Date</th>
-                                    <th scope="col" className="text-center">Exercise Name</th>
-                                    <th scope="col" className="text-center">Intensity</th>
-                                    <th scope="col" className="text-center">Time Taken</th>
-                                    <th scope="col" className="text-center">Counter</th>
-                                    <th scope="col" className="text-center">Activity Rate: Completed / Given</th>
-                                    <th scope="col" className="text-center">Error</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col" className="text-center">
+                                      Exercise Name
+                                    </th>
+                                    <th scope="col" className="text-center">
+                                      Intensity
+                                    </th>
+                                    <th scope="col" className="text-center">
+                                      Time Taken
+                                    </th>
+                                    <th scope="col" className="text-center">
+                                      Counter
+                                    </th>
+                                    <th scope="col" className="text-center">
+                                      Activity Rate: Completed / Given
+                                    </th>
+                                    <th scope="col" className="text-center">
+                                      Error
+                                    </th>
                                   </tr>
                                 </thead>
                                 {excercise.report.map((reportObj, index) => (
                                   <>
                                     <tbody>
                                       <tr>
-                                        <th scope="row"  >{reportObj.date}</th>
-                                        <td className="text-center">{excercise.name}</td>
-                                        <td className="text-center">{excercise.severity}</td>
-                                        <td className="text-center">{reportObj.timer} seconds</td>
+                                        <th scope="row">{reportObj.date}</th>
+                                        <td className="text-center">
+                                          {excercise.name}
+                                        </td>
+                                        <td className="text-center">
+                                          {excercise.severity}
+                                        </td>
+                                        <td className="text-center">
+                                          {reportObj.timer} seconds
+                                        </td>
                                         <td className="text-center">
                                           {reportObj.counter} times
                                         </td>
-                                        <td className="text-center"> {Math.round((reportObj.counter/reportObj.timer)*1000)/1000} /{excercise.perActivityTime} </td>
-                                        <td className="text-center">{reportObj.error} </td>
+                                        <td className="text-center">
+                                          {" "}
+                                          {Math.round(
+                                            (reportObj.timer /
+                                              reportObj.counter) *
+                                              1000
+                                          ) / 1000}{" "}
+                                          /{excercise.perActivityTime}{" "}
+                                        </td>
+                                        <td className="text-center">
+                                          {reportObj.error}{" "}
+                                        </td>
                                       </tr>
                                     </tbody>
                                   </>
