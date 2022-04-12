@@ -26,7 +26,7 @@ export default function AboutPatient(props) {
 
   async function getUser() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/auth/getUser`,
+      `http://localhost:5000/api/auth/getUser`,
       {
         method: "GET",
         headers: {
@@ -40,7 +40,7 @@ export default function AboutPatient(props) {
   }
   async function getBooking() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/calendar/fetchmenteeBooking`,
+      `http://localhost:5000/api/calendar/fetchmenteeBooking`,
       {
         method: "GET",
         headers: {
@@ -59,7 +59,7 @@ export default function AboutPatient(props) {
     );
     //call api for deleting prescription
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/completeExcercise/${id}`,
+      `http://localhost:5000/api/excercise/completeExcercise/${id}`,
       {
         method: "PUT",
         headers: {
@@ -82,7 +82,7 @@ export default function AboutPatient(props) {
 
   async function getExcercise() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/fetchexcercisepatient`,
+      `http://localhost:5000/api/excercise/fetchexcercisepatient`,
       {
         method: "GET",
         headers: {
@@ -97,7 +97,7 @@ export default function AboutPatient(props) {
   const updateDisease = async () => {
     props.showAlert("Disease updated succesfully", "success");
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/auth/updateDisease`,
+      `http://localhost:5000/api/auth/updateDisease`,
       {
         method: "PUT",
         headers: {

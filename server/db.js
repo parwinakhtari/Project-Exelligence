@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const uri = `mongodb+srv://pari:newpassword@cluster0.wiomu.mongodb.net/exedb?retryWrites=true&w=majority`;
+const uri = `mongodb://localhost:27017/drreddy`;
 const connectToMongo = () => {
   mongoose.connect(
     uri,

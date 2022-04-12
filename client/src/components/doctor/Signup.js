@@ -61,7 +61,7 @@ export const Signup = (props) => {
     } = credentials;
 
     const otp = Math.floor((Math.random() * 100000) + 1);
-    const response = await fetch(`https://exelligence-backend.herokuapp.com/api/auth/signup`, {
+    const response = await fetch(`http://localhost:5000/api/auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

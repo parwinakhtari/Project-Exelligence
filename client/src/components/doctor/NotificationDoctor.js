@@ -20,7 +20,7 @@ export default function NotificationDoctor(props) {
 
   async function getUser() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/calendar/fetchallnoti`,
+      `http://localhost:5000/api/calendar/fetchallnoti`,
       {
         method: "GET",
         headers: {
@@ -36,7 +36,7 @@ export default function NotificationDoctor(props) {
     try {
       //call api for creating calendarevent
       const response = await fetch(
-        `https://exelligence-backend.herokuapp.com/api/calendar/addevent`,
+        `http://localhost:5000/api/calendar/addevent`,
         {
           method: "POST",
           headers: {
@@ -58,7 +58,7 @@ export default function NotificationDoctor(props) {
         "success"
       );
       //call api for deleting event
-      await fetch(`https://exelligence-backend.herokuapp.com/api/calendar/deleteevent/${notiId}`, {
+      await fetch(`http://localhost:5000/api/calendar/deleteevent/${notiId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export default function NotificationDoctor(props) {
 
   async function handleReject(notiId) {
     try {
-      await fetch(`https://exelligence-backend.herokuapp.com/api/calendar/deleteevent/${notiId}`, {
+      await fetch(`http://localhost:5000/api/calendar/deleteevent/${notiId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

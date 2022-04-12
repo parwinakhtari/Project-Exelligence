@@ -38,7 +38,7 @@ export default function About(props) {
 
   async function getUser() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/auth/getUser`,
+      `http://localhost:5000/api/auth/getUser`,
       {
         method: "GET",
         headers: {
@@ -49,7 +49,7 @@ export default function About(props) {
     const data = await response.json();
     setProfile(data);
     const response2 = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/calendar/fetchmyEvents`,
+      `http://localhost:5000/api/calendar/fetchmyEvents`,
       {
         method: "GET",
         headers: {

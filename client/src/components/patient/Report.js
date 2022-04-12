@@ -16,7 +16,7 @@ export const Report = (props) => {
   }, []);
   async function getReport() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcercise`,
+      `http://localhost:5000/api/excercise/fetchtExcercise`,
       {
         method: "GET",
         headers: {

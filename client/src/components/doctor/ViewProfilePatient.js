@@ -34,7 +34,7 @@ export default function ViewProfilePatient(props) {
   // Separate function to get user details
   async function getUser() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/auth/getDetailsofPatient/${id}`,
+      `http://localhost:5000/api/auth/getDetailsofPatient/${id}`,
       {
         method: "GET",
         headers: {
@@ -48,7 +48,7 @@ export default function ViewProfilePatient(props) {
 
   async function getExercise() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/fetchexercisedoctor/${id}`,
+      `http://localhost:5000/api/excercise/fetchexercisedoctor/${id}`,
       {
         method: "GET",
         headers: {
@@ -90,7 +90,7 @@ export default function ViewProfilePatient(props) {
     let patientName = profile.name;
     props.showAlert("Excercise Added Succesfully", "success");
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/addExcercise/${id}`,
+      `http://localhost:5000/api/excercise/addExcercise/${id}`,
       {
         method: "POST",
         headers: {
@@ -124,7 +124,7 @@ export default function ViewProfilePatient(props) {
     props.showAlert("Excercise Deleted Succesfully", "success");
     //call api for deleting excercise
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/deleteexercise/${ExcId}`,
+      `http://localhost:5000/api/excercise/deleteexercise/${ExcId}`,
       {
         method: "DELETE",
         headers: {
@@ -264,7 +264,7 @@ export default function ViewProfilePatient(props) {
                           <option value="lateral flexion">
                             Lateral Flexion
                           </option>
-                          <option value="squats">Squats</option>
+                          <option value="elbow eccentric">Squats</option>
                           <option value="lunges">Lunges</option>
                           <option value="extension">Extension</option>
                         </select>

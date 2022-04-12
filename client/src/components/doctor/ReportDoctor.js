@@ -16,7 +16,7 @@ export const ReportDoctor = (props) => {
   }, []);
   async function otpconf() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/auth/getUser`,
+      `http://localhost:5000/api/auth/getUser`,
       {
         method: "GET",
         headers: {
@@ -39,7 +39,7 @@ export const ReportDoctor = (props) => {
   async function getReport() {
     console.log("hahahha");
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcerciseDoctor`,
+      `http://localhost:5000/api/excercise/fetchtExcerciseDoctor`,
       {
         method: "GET",
         headers: {

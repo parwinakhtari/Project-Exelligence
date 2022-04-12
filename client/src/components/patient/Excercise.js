@@ -19,7 +19,7 @@ export const Excercise = (props) => {
   }, []);
   async function getExcercise() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/excercise/fetchtExcercise`,
+      `http://localhost:5000/api/excercise/fetchtExcercise`,
       {
         method: "GET",
         headers: {
@@ -31,7 +31,7 @@ export const Excercise = (props) => {
     setActivity(excercises);
   }
   async function getUser() {
-    const response = await fetch(`https://exelligence-backend.herokuapp.com/api/auth/getUser`, {
+    const response = await fetch(`http://localhost:5000/api/auth/getUser`, {
       method: "GET",
       headers: {
         "auth-token": localStorage.getItem("token"),
@@ -57,7 +57,7 @@ export const Excercise = (props) => {
                           <div className="row">
                             <div className="col-7 col-sm-8 justify-content-center align-self-center">
                               <b>Exercise Name: </b>
-                              {excercise.name} &nbsp; &nbsp;&nbsp;
+                              {excercise.name==='elbow eccentric'?'squats':excercise.name} &nbsp; &nbsp;&nbsp;
                               <br></br>
                               <b>Per activity time:</b>{" "}
                               {excercise.perActivityTime} seconds &nbsp;
@@ -75,7 +75,7 @@ export const Excercise = (props) => {
                                 <a
                                 type="button"
                                 className="btn btn-success mx-2"
-                                href={`https://pao.butterscotch.tech/${excercise.name
+                                href={`http://localhost:8000/${excercise.name
                                   .split(" ")
                                   .join("")}/left,${excercise.severity},${excercise.perActivityTime},${profile._id},${excercise._id},${activity._id}`}
                                 target="_blank"
@@ -90,7 +90,7 @@ export const Excercise = (props) => {
                               <a
                                 type="button"
                                 className="btn btn-primary"
-                                href={`https://pao.butterscotch.tech/${excercise.name
+                                href={`http://localhost:8000/${excercise.name
                                   .split(" ")
                                   .join("")}/right,${excercise.severity},${excercise.perActivityTime},${profile._id},${excercise._id},${activity._id}`}
                                 target="_blank"
@@ -109,7 +109,7 @@ export const Excercise = (props) => {
                                 <a
                                 type="button"
                                 className="btn btn-success"
-                                href={`https://pao.butterscotch.tech/${excercise.name
+                                href={`http://localhost:8000/${excercise.name
                                   .split(" ")
                                   .join("")}/${excercise.severity},${excercise.perActivityTime},${profile._id},${excercise._id},${activity._id}`}
                                 target="_blank"

@@ -16,7 +16,7 @@ export const Aroms = () => {
   }, []);
   async function getUser() {
     const response = await fetch(
-      `https://exelligence-backend.herokuapp.com/api/auth/getUser`,
+      `http://localhost:5000/api/auth/getUser`,
       {
         method: "GET",
         headers: {
@@ -40,7 +40,7 @@ export const Aroms = () => {
         <a
           type="button"
           className="btn btn-success"
-          href={`https://pao.butterscotch.tech/aroms/flexion${profile._id}`}
+          href={`http://localhost:8000/flexion${profile._id}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -49,7 +49,7 @@ export const Aroms = () => {
         <a
           type="button"
           className="btn btn-success  my-3"
-          href={`https://pao.butterscotch.tech/aroms/extension,${profile._id}`}
+          href={`http://localhost:8000/extension,${profile._id}`}
           target="_blank"
           rel="noreferrer"
         >
@@ -58,7 +58,7 @@ export const Aroms = () => {
         <a
           type="button"
           className="btn btn-success"
-          href={`https://pao.butterscotch.tech/aroms/lateralflexion,${profile._id}`}
+          href={`http://localhost:8000/aroms/lateralflexion,${profile._id}`}
           target="_blank"
           rel="noreferrer"
         >
