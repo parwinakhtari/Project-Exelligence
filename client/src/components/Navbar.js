@@ -61,15 +61,7 @@ export default function Navbar(props) {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link
-                      className={`nav-link ${
-                        location.pathname === "/aroms" ? "active" : ""
-                      }`}
-                      aria-current="page"
-                      to="/aroms"
-                    >
-                      AROMS
-                    </Link>
+               
                   </li>
                   <li className="nav-item">
                     <Link
@@ -90,6 +82,17 @@ export default function Navbar(props) {
                     >
                       Report
                     </Link>
+                      
+                    <Link
+                      className={`nav-link ${
+                        location.pathname === "/maps" ? "active" : ""
+                      }`}
+                      to="/maps"
+                    >
+                      Toilet Tracker
+                    </Link>
+
+
                   </li>
                   <li className="nav-item">
                     <Link

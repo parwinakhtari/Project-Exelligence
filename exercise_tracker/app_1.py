@@ -377,8 +377,8 @@ def complete():
         headers=headers,
     )
 
-    return render_template("aroms_result.html", obj=obj1)
-    # return request("post", "http://localhost:5000/api/exercise/report", data=arr)
+    # return render_template("aroms_result.html", obj=obj1)
+    return request("post", "http://localhost:5000/api/exercise/report", data=arr)
 
 @app.route("/score", methods=["GET", "POST"])
 def score():

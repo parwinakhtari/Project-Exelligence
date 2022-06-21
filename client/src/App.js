@@ -21,6 +21,10 @@ import { Excercise } from "./components/patient/Excercise";
 import { Report } from "./components/patient/Report";
 import { ReportDoctor } from "./components/doctor/ReportDoctor";
 import { Aroms } from "./components/patient/Aroms";
+import Maps from "./components/Maps/maps"
+
+
+
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -41,7 +45,9 @@ function App() {
         <Alert alert={alert} />
         <div>
           <Routes>
+
             <Route exact path="/" element={<Home showAlert={showAlert} />} />
+            <Route exact path="/maps" element={<Maps showAlert={showAlert} />} />
             <Route exact path="/homedoctor" element={<Homedoctor showAlert={showAlert} />} />
             <Route exact path="/about" element={<About showAlert={showAlert} />} />
             <Route exact path="/aboutpatient" element={<AboutPatient showAlert={showAlert} />} />
